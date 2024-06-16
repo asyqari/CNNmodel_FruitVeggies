@@ -11,7 +11,7 @@ EDAMAM_APP_KEY = "33476bccb9a1e3d824e619d255616993"
 @st.cache_resource
 def load_model():
     try:
-        model = tf.keras.models.load_model("trained_model.h5")
+        model = tf.keras.models.load_model("trained_model_fiks.h5")
         print("Model loaded successfully")
         return model
     except Exception as e:
@@ -32,6 +32,7 @@ def predict_img(img):
     input_arr = np.array([input_arr])
     prediction = model.predict(input_arr)
 
+    print(np.argmax(prediction))
     return np.argmax(prediction)
 
 
@@ -168,7 +169,7 @@ if page_selected == "Abouts":
     )
     st.subheader("The Model")
     long_text = """The model used uses the concept of a Convolutional Neural Network and a dataset from Kaggle in the form of fruit and vegetable image data.
-    The model was built with multilayers and achieved an accuracy of 88 percent (can increase if tuned and retrained)"""
+    The model was built with multilayers and achieved an accuracy of 92 percent (can increase if tuned and retrained)"""
 
     st.markdown(
         f'<div style="max-height: 300px; overflow-y: auto; padding: 10px; border: 1px solid #ddd;">{long_text}</div>',
