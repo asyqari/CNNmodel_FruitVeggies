@@ -2,4 +2,3 @@ tensorflow==2.16.1
 numpy==1.26.4
 streamlit==1.35.0
 requests==2.32.3
-python==3.9.19
