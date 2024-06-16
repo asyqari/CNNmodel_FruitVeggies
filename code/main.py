@@ -11,7 +11,7 @@ EDAMAM_APP_KEY = "33476bccb9a1e3d824e619d255616993"
 @st.cache_resource
 def load_model():
     try:
-        model = tf.keras.models.load_model("trained_model_fiks.h5")
+        model = tf.keras.models.load_model("code/trained_model_fiks.h5")
         print("Model loaded successfully")
         return model
     except Exception as e:
@@ -96,7 +96,9 @@ if page_selected == "Abouts":
 
     st.subheader("About Dataset")
     st.text("Context: ")
-    st.markdown("Link to the Dataset: https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition")
+    st.markdown(
+        "Link to the Dataset: https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition"
+    )
     st.markdown(
         "This dataset encompasses images of various fruits and vegetables, providing a diverse collection for image recognition tasks. The included food items are:"
     )
@@ -193,7 +195,7 @@ if page_selected == "Predict":
         result_id = predict_img(img)
         if result_id is not None:
             # Read the labels file
-            with open("labels.txt") as f:
+            with open("code/labels.txt") as f:
                 content = f.readlines()
             labels = [x.strip() for x in content]
 
