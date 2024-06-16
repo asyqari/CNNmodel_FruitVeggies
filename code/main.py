@@ -32,8 +32,8 @@ def predict_img(img):
     input_arr = np.array([input_arr])
     prediction = model.predict(input_arr)
 
-    logging.info(f"Predicted index: {predicted_index}")
-    logging.info(f"Predicted label: {class_names[predicted_index]}")
+    # logging.info(f"Predicted index: {predicted_index}")
+    # logging.info(f"Predicted label: {class_names[predicted_index]}")
     return np.argmax(prediction)
 
 
