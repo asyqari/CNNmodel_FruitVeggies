@@ -11,7 +11,7 @@ EDAMAM_APP_KEY = "33476bccb9a1e3d824e619d255616993"
 @st.cache_resource
 def load_model():
     try:
-        model = tf.keras.models.load_model("code/trained_model_fiks.h5")
+        model = tf.keras.models.load_model("code/trained_model_new.h5")
         print("Model loaded successfully")
         return model
     except Exception as e:
@@ -79,6 +79,7 @@ def calculate_nutrients_and_tips(food_item):
 
 
 # Sidebar
+st.title("CalorieMate")
 st.sidebar.title("Dashboard")
 page_selected = st.sidebar.selectbox("Select Page", ["Abouts", "Predict"])
 
